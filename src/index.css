@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+button {
+  font-size: 100px;
+  color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.RED {
+  background-color: red;
+}
+.RED_LIGHT {
+  background-color: lightcoral;
+}
+
+.BLUE {
+  background-color: blue;
+}
+
+.BLUE_LIGHT {
+  background-color: lightblue;
+}
+
+.GREEN {
+  background-color: green;
+}
+
+.GREEN_LIGHT {
+  background-color: lightgreen;
 }
