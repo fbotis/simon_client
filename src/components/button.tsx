@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from "react";
+import NoSleep from "nosleep.js";
 
 const Button: React.FC = () => {
   const [color, setColor] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [ws, setWs] = useState<WebSocket>();
   const [buttonText, setButtonText] = useState<string>("");
+
+  var asignedColor = "";
+  var cnt=0;
   // This will run one time after the component mounts
   useEffect(() => {
+    var noSleep = new NoSleep();
+    noSleep.enable();
     const onPageLoad = () => {
+      if (cnt>0){
+          return;
+      }
       let w = new WebSocket("ws://agile-escarpment-87607.herokuapp.com/simon/button/");
+      cnt++;
+      setButtonText(cnt.toString());
       w.onmessage = function (event) {
         const js = JSON.parse(event.data);
         console.log(js);
@@ -53,7 +64,7 @@ const Button: React.FC = () => {
     }
   }, []);
 
-  var asignedColor = "";
+  
 
   const onClick = () => {
     const clickCmd = { command: "PRESS_BUTTON" };
