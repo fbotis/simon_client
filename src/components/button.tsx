@@ -17,7 +17,7 @@ const Button: React.FC = () => {
       if (cnt>0){
           return;
       }
-      let w = new WebSocket("ws://agile-escarpment-87607.herokuapp.com/simon/button/");
+      let w = new WebSocket("wss://agile-escarpment-87607.herokuapp.com/simon/button/");
       cnt++;
       setButtonText(cnt.toString());
       w.onmessage = function (event) {
